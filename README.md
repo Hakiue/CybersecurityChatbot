@@ -1,7 +1,7 @@
 # 🛡️ Cybersecurity Awareness Chatbot — Part 1
 
-**Module:** Programming 2A (PROG6221/w)  
-**Assessment:** Portfolio of Evidence — Part 1  
+**Module:** Programming 2A (PROG6221/w)
+**Assessment:** Portfolio of Evidence — Part 1
 **Institution:** The Independent Institute of Education (IIE)
 
 ---
@@ -52,6 +52,7 @@ CybersecurityChatbot/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Windows 10 or later
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8) installed
 
@@ -73,12 +74,12 @@ dotnet build CybersecurityChatbot/CybersecurityChatbot.csproj --configuration Re
 
 ## 🔊 Voice Greeting Setup
 
-1. Record a short WAV message, for example:  
+1. Record a short WAV message, for example:
    *"Hello! Welcome to the Cybersecurity Awareness Bot. I'm here to help you stay safe online."*
 
 2. Save it as `greeting.wav` in the `CybersecurityChatbot/Assets/` folder.
 
-3. The app will play it automatically on startup.  
+3. The app will play it automatically on startup.
    If the file is missing, the app continues normally with a console notice.
 
 **Recording tools:**
@@ -91,7 +92,7 @@ dotnet build CybersecurityChatbot/CybersecurityChatbot.csproj --configuration Re
 
 Type any of these keywords to get cybersecurity guidance:
 
-`password` · `phishing` · `safe browsing` · `two-factor` · `2fa` · `scam`  
+`password` · `phishing` · `safe browsing` · `two-factor` · `2fa` · `scam`
 `malware` · `privacy` · `ransomware` · `social engineering` · `wifi` · `vpn` · `identity theft`
 
 **Random tips:** type `phishing tip`, `password tip`, or `safe browsing tip` to receive a random tip.
@@ -103,15 +104,15 @@ Type any of these keywords to get cybersecurity guidance:
 ## 🧪 Example Interaction
 
 ```
-  👤 Name  : phishing
+  👤 You   : phishing
   🤖 Bot   : Phishing emails pretend to be from trusted sources to steal your
              information. Always check the sender's email address carefully...
 
-  👤 Name  : give me a phishing tip
+  👤 You   : give me a phishing tip
   🤖 Bot   : Be cautious of emails creating urgency — scammers want you to act
              before you think.
 
-  👤 Name  : exit
+  👤 You   : exit
   🤖 Bot   : Exiting the chatbot. Stay cyber-safe!
 ```
 
@@ -129,9 +130,7 @@ The repository uses a GitHub Actions workflow (`.github/workflows/dotnet-ci.yml`
 
 ### CI Workflow Screenshot
 
-> 📸 *Replace the placeholder below with a screenshot of your green CI check from the GitHub Actions tab.*
-
-![CI Workflow Green Check](docs/ci-screenshot.png)
+![CI Workflow Screenshot](Screenshot-2026-04-13.png)
 
 ---
 
@@ -150,7 +149,7 @@ The repository uses a GitHub Actions workflow (`.github/workflows/dotnet-ci.yml`
 
 ## 🎥 Video Presentation
 
-> 🎬 [YouTube Unlisted Link — insert your link here]
+▶️ [Watch the Video Presentation](https://youtu.be/kDrrleHz-GU)
 
 The video covers:
 - Application startup and voice greeting
