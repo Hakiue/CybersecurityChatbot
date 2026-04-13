@@ -1,0 +1,43 @@
+name: .NET CI Build
+
+on:
+  push:
+    branches: [ "main", "master", "develop" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    name: Build & Verify
+    runs-on: windows-latest   # Windows required for net8.0-windows target
+
+    steps:
+      # 1. Check out source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up the correct .NET SDK version
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # 3. Restore NuGet packages
+      - name: Restore dependencies
+        run: dotnet restore CybersecurityChatbot/CybersecurityChatbot.csproj
+
+      # 4. Build in Release configuration — catches compile errors
+      - name: Build (Release)
+        run: dotnet build CybersecurityChatbot/CybersecurityChatbot.csproj --configuration Release --no-restore
+
+      # 5. Verify the output executable was produced
+      - name: Verify build output
+        shell: pwsh
+        run: |
+          $exe = "CybersecurityChatbot/bin/Release/net8.0-windows/CybersecurityChatbot.exe"
+          if (Test-Path $exe) {
+            Write-Host "✅ Build output verified: $exe"
+          } else {
+            Write-Error "❌ Build output not found at $exe"
+            exit 1
+          }
